@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<project name="C:/laragon/www/consults_admin/consults_admin.clpprj">
+ <settings>
+  <PM_URL><![CDATA[http://localhost/C:/laragon/www/consults_admin]]></PM_URL>
+  <PM_HOME_URL><![CDATA[http://localhost/C:/laragon/www/consults_admin]]></PM_HOME_URL>
+  <PM_LIBS><![CDATA[]]></PM_LIBS>
+  <PM_LANGUAGE><![CDATA[]]></PM_LANGUAGE>
+ </settings>
+</project>
