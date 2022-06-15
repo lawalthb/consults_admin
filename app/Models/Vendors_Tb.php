@@ -50,10 +50,11 @@ class Vendors_Tb extends Model
 		$search_condition = '(
 				vendors_tb.title LIKE ?  OR 
 				vendors_tb.name LIKE ?  OR 
-				vendors_tb.email LIKE ? 
+				vendors_tb.email LIKE ?  OR 
+				vendors_tb.password LIKE ? 
 		)';
 		$search_params = [
-			"%$text%","%$text%","%$text%"
+			"%$text%","%$text%","%$text%","%$text%"
 		];
 		//setting search conditions
 		$query->whereRaw($search_condition, $search_params);

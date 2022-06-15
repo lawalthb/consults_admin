@@ -65,63 +65,33 @@
 		],
 		
 		[
+			'path' => 'stock_tb/vendor_stock',
+			'label' => "Vendor Stock", 
+			'icon' => '<i class="material-icons ">graphic_eq</i>'
+		],
+		
+		[
 			'path' => 'payment_tb',
 			'label' => "Payment Tb", 
 			'icon' => '<i class="material-icons">extension</i>'
 		],
 		
 		[
-			'path' => 'permissions',
-			'label' => "Permissions", 
-			'icon' => '<i class="material-icons">extension</i>'
-		],
-		
-		[
 			'path' => 'roles',
-			'label' => "Roles", 
-			'icon' => '<i class="material-icons">extension</i>'
-		],
-		
-		[
-			'path' => 'model_has_roles',
-			'label' => "Model Has Roles", 
-			'icon' => '<i class="material-icons">extension</i>'
-		],
-		
-		[
-			'path' => 'model_has_permissions',
-			'label' => "Model Has Permissions", 
-			'icon' => '<i class="material-icons">extension</i>'
+			'label' => "Admin Type/Roles", 
+			'icon' => '<i class="material-icons ">security</i>'
 		],
 		
 		[
 			'path' => 'role_has_permissions',
-			'label' => "Role Has Permissions", 
-			'icon' => '<i class="material-icons">extension</i>'
-		],
-		
-		[
-			'path' => 'sales_tb/checkout_order',
-			'label' => "Checkout Order", 
-			'icon' => '<i class="material-icons">extension</i>'
-		],
-		
-		[
-			'path' => 'sales_tb/advlist',
-			'label' => "Advlist", 
-			'icon' => '<i class="material-icons">extension</i>'
+			'label' => "Grant Admin  Permissions", 
+			'icon' => '<i class="material-icons ">accessibility</i>'
 		],
 		
 		[
 			'path' => 'product_departments',
-			'label' => "Product Departments", 
-			'icon' => '<i class="material-icons">extension</i>'
-		],
-		
-		[
-			'path' => 'stock_tb/vendor_stock',
-			'label' => "Vendor Stock", 
-			'icon' => '<i class="material-icons">extension</i>'
+			'label' => "Items & Departments", 
+			'icon' => '<i class="material-icons ">wrap_text</i>'
 		]
 	] ;
 	}

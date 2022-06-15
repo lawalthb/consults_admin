@@ -67,10 +67,7 @@ class Roles extends Model
 	public static function listFields(){
 		return [ 
 			"id",
-			"name",
-			"guard_name",
-			"created_at",
-			"updated_at" 
+			"name" 
 		];
 	}
 	
@@ -83,10 +80,7 @@ class Roles extends Model
 	public static function exportListFields(){
 		return [ 
 			"id",
-			"name",
-			"guard_name",
-			"created_at",
-			"updated_at" 
+			"name" 
 		];
 	}
 	

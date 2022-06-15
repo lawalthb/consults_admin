@@ -23,10 +23,12 @@ class RolesEditRequest extends FormRequest
     public function rules()
     {
 		
+		$rec_id = request()->route('rec_id');
+
         return [
             
-				"name" => "filled|string",
-				"guard_name" => "filled|string",
+				"name" => "filled|string|unique:roles,name,$rec_id,id",
+				"guard_name" => "filled",
             
         ];
     }

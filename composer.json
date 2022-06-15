@@ -1,9 +1,9 @@
 {
-    "name": "consults_admin/consults_admin-app",
+    "name": "ogitechconsultsadmin/ogitechconsultsadmin-app",
     "type": "project",
-    "description": "consults_admin",
+    "description": "OGITECH CONSULTS - ADMIN",
     "keywords": [
-        "consults_admin"
+        "ogitechconsultsadmin"
     ],
     "license": "MIT",
     "require": {

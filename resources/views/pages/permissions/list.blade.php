@@ -78,9 +78,6 @@
                                                 <?php } ?>
                                                 <th class="td-id" > Id</th>
                                                 <th class="td-name" > Name</th>
-                                                <th class="td-guard_name" > Guard Name</th>
-                                                <th class="td-created_at" > Created At</th>
-                                                <th class="td-updated_at" > Updated At</th>
                                                 <th class="td-btn"></th>
                                             </tr>
                                         </thead>
@@ -110,15 +107,6 @@
                                                 </td>
                                                 <td class="td-name">
                                                     <?php echo  $data['name'] ; ?>
-                                                </td>
-                                                <td class="td-guard_name">
-                                                    <?php echo  $data['guard_name'] ; ?>
-                                                </td>
-                                                <td class="td-created_at">
-                                                    <?php echo  $data['created_at'] ; ?>
-                                                </td>
-                                                <td class="td-updated_at">
-                                                    <?php echo  $data['updated_at'] ; ?>
                                                 </td>
                                                 <!--PageComponentEnd-->
                                                 <td class="td-btn">

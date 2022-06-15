@@ -1,7 +1,7 @@
 <?php return array (
   'app' => 
   array (
-    'name' => 'consults_admin',
+    'name' => 'OGITECH CONSULTS - ADMIN',
     'env' => 'local',
     'debug' => true,
     'url' => 'http://localhost:8050',
@@ -265,7 +265,7 @@
         'endpoint' => NULL,
       ),
     ),
-    'prefix' => 'consults_admin_cache',
+    'prefix' => 'ogitech_consults_admin_cache',
   ),
   'captcha' => 
   array (
@@ -473,7 +473,7 @@
       'options' => 
       array (
         'cluster' => 'redis',
-        'prefix' => 'consults_admin_database_',
+        'prefix' => 'ogitech_consults_admin_database_',
       ),
       'default' => 
       array (
@@ -911,7 +911,7 @@
       0 => 2,
       1 => 100,
     ),
-    'cookie' => 'consults_admin_session',
+    'cookie' => 'ogitech_consults_admin_session',
     'path' => '/',
     'domain' => NULL,
     'secure' => NULL,

@@ -76,8 +76,8 @@
                                                 </label>
                                                 </th>
                                                 <?php } ?>
-                                                <th class="td-permission_id" > Permission Id</th>
-                                                <th class="td-role_id" > Role Id</th>
+                                                <th class="td-permission_id" > Permission/Actions</th>
+                                                <th class="td-role_id" > Role/Admin Type</th>
                                                 <th class="td-btn"></th>
                                             </tr>
                                         </thead>
@@ -104,12 +104,12 @@
                                                 <!--PageComponentStart-->
                                                 <td class="td-permission_id">
                                                     <a size="sm" class="btn btn-sm btn btn-link page-modal" href="<?php print_link("permissions/view/" . urlencode($data['permission_id'])) ?>">
-                                                    <i class="material-icons">visibility</i> <?php echo "Permissions" ?>
+                                                    <?php echo $data['permissions_name'] ?>
                                                 </a>
                                             </td>
                                             <td class="td-role_id">
                                                 <a size="sm" class="btn btn-sm btn btn-link page-modal" href="<?php print_link("roles/view/" . urlencode($data['role_id'])) ?>">
-                                                <i class="material-icons">visibility</i> <?php echo "Roles" ?>
+                                                <?php echo $data['roles_name'] ?>
                                             </a>
                                         </td>
                                         <!--PageComponentEnd-->

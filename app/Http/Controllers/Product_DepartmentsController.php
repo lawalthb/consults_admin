@@ -51,27 +51,6 @@ class Product_DepartmentsController extends Controller
 	
 
 	/**
-     * Display form page
-     * @return \Illuminate\View\View
-     */
-	function add(){
-		return view("pages.product_departments.add");
-	}
-	
-
-	/**
-     * Insert multiple record into the database table
-     * @return \Illuminate\Http\Response
-     */
-	function store(Product_DepartmentsAddRequest $request){
-		$postdata = $request->input("row");
-		$modeldata = array_values($postdata);
-		Product_Departments::insert($modeldata);
-		return $this->redirect("product_departments", "Record added successfully");
-	}
-	
-
-	/**
      * Update table record with form data
 	 * @param string $rec_id //select record by table primary key
      * @return \Illuminate\View\View;

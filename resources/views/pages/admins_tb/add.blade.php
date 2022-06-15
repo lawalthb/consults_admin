@@ -42,8 +42,7 @@
                                         </div>
                                         <div class="col-sm-8">
                                             <div id="ctrl-firstname-holder" class=" ">
-                                                <input id="ctrl-firstname"  value="<?php echo get_value('firstname') ?>" type="text" placeholder="Enter Firstname"  required="" name="firstname"  data-url="componentsdata/admins_tb_firstname_value_exist/" data-loading-msg="Checking availability ..." data-available-msg="Available" data-unavailable-msg="Not available" class="form-control  ctrl-check-duplicate" />
-                                                <div class="check-status"></div> 
+                                                <input id="ctrl-firstname"  value="<?php echo get_value('firstname') ?>" type="text" placeholder="Enter Firstname"  required="" name="firstname"  class="form-control " />
                                             </div>
                                         </div>
                                     </div>
@@ -121,19 +120,6 @@
                                         <div class="col-sm-8">
                                             <div id="ctrl-username-holder" class=" ">
                                                 <input id="ctrl-username"  value="<?php echo get_value('username') ?>" type="text" placeholder="Enter Username"  required="" name="username"  class="form-control " />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <input id="ctrl-admin_type"  value="<?php echo get_value('admin_type', "sales_rep") ?>" type="hidden" placeholder="Enter Admin Type"  name="admin_type"  class="form-control " />
-                                <div class="form-group ">
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <label class="control-label" for="status">Status </label>
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <div id="ctrl-status-holder" class=" ">
-                                                <input id="ctrl-status"  value="<?php echo get_value('status', "1") ?>" type="number" placeholder="Enter Status" step="any"  name="status"  class="form-control " />
                                             </div>
                                         </div>
                                     </div>

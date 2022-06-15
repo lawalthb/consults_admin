@@ -1,7 +1,6 @@
 <?php 
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admins_TbRegisterRequest;
 use App\Http\Requests\Admins_TbAccountEditRequest;
 use App\Http\Requests\Admins_TbAddRequest;
 use App\Http\Requests\Admins_TbEditRequest;
@@ -86,12 +85,6 @@ class Admins_TbController extends Controller
 		$record = $query->findOrFail($rec_id, Admins_Tb::editFields());
 		if ($request->isMethod('post')) {
 			$modeldata = $this->normalizeFormData($request->validated());
-		
-		if( array_key_exists("photo", $modeldata) ){
-			//move uploaded file from temp directory to destination directory
-			$fileInfo = $this->moveUploadedFiles($modeldata['photo'], "photo");
-			$modeldata['photo'] = $fileInfo['filepath'];
-		}
 			$modeldata['password'] = bcrypt($modeldata['password']);
 			$record->update($modeldata);
 			return $this->redirect("admins_tb", "Record updated successfully");

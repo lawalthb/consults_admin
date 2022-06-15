@@ -46,38 +46,6 @@ class AuthController extends Controller{
 	
 
 	/**
-     * Display user registration form
-     * @return \Illuminate\View\View
-     */
-	function register(){
-		return view("pages.index.register");
-	}
-	
-
-	/**
-     * Save new user record
-     * @return \Illuminate\Http\Response
-     */
-	function register_store(Admins_TbRegisterRequest $request){
-		$modeldata = $this->normalizeFormData($request->validated());
-		
-		if( array_key_exists("photo", $modeldata) ){
-			//move uploaded file from temp directory to destination directory
-			$fileInfo = $this->moveUploadedFiles($modeldata['photo'], "photo");
-			$modeldata['photo'] = $fileInfo['filepath'];
-		}
-		$modeldata['password'] = bcrypt($modeldata['password']);
-		
-		//save Admins_tb record
-		$user = $record = Admins_tb::create($modeldata);
-		$user->assignRole("director"); //set default role for user
-		$rec_id = $record->firstname;
-		Auth::login($user);
-		return $this->redirectIntended("/home", "Login completed");
-	}
-	
-
-	/**
      * Logout user from session
      * @return \Illuminate\Http\Response
      */

@@ -39,7 +39,7 @@ class Admins_Tb extends Authenticatable
      *
      * @var array
      */
-	protected $fillable = ['firstname','username','lastname','email','password','admin_type','status','deleted','photo'];
+	protected $fillable = ['firstname','lastname','email','password','username','admin_type','status','deleted','photo'];
 	
 
 	/**
@@ -189,10 +189,7 @@ class Admins_Tb extends Authenticatable
 			"email",
 			"password",
 			"username",
-			"admin_type",
-			"status",
-			"deleted",
-			"photo" 
+			"status" 
 		];
 	}
 	

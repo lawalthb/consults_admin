@@ -25,7 +25,7 @@
                 <div class="col-12 col-md-auto " >
                     <div class="row  q-col-gutter-sm q-px-sm" >
                         <div class="col">
-                            <div class="h5 font-weight-bold text-primary">Admins Tb</div>
+                            <div class="h5 font-weight-bold text-primary">Sales representative</div>
                         </div>
                     </div>
                 </div>

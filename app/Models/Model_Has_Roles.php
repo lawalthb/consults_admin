@@ -49,7 +49,7 @@ class Model_Has_Roles extends Model
 	public static function search($query, $text){
 		//search table record 
 		$search_condition = '(
-				model_type LIKE ? 
+				model_has_roles.model_type LIKE ? 
 		)';
 		$search_params = [
 			"%$text%"
@@ -66,9 +66,10 @@ class Model_Has_Roles extends Model
      */
 	public static function listFields(){
 		return [ 
-			"role_id",
-			"model_type",
-			"model_id" 
+			"model_has_roles.role_id AS role_id",
+			"roles.name AS roles_name",
+			"model_has_roles.model_id AS model_id",
+			"admins_tb.firstname AS admins_tb_firstname" 
 		];
 	}
 	
@@ -80,9 +81,10 @@ class Model_Has_Roles extends Model
      */
 	public static function exportListFields(){
 		return [ 
-			"role_id",
-			"model_type",
-			"model_id" 
+			"model_has_roles.role_id AS role_id",
+			"roles.name AS roles_name",
+			"model_has_roles.model_id AS model_id",
+			"admins_tb.firstname AS admins_tb_firstname" 
 		];
 	}
 	

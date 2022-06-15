@@ -31,9 +31,6 @@ use Illuminate\Support\Facades\Mail;
 
 
 	
-	Route::get('auth/register', 'AuthController@register')->name('auth.register');
-	Route::post('auth/register_store', 'AuthController@register_store')->name('auth.register_store');
-		
 	Route::post('auth/login', 'AuthController@login')->name('auth.login');
 	Route::get('auth/password/forgotpassword', 'AuthController@showForgotPassword')->name('password.forgotpassword');
 	Route::post('auth/password/sendemail', 'AuthController@sendPasswordResetLink')->name('password.email');
@@ -149,9 +146,6 @@ Route::middleware(['auth', 'rbac'])->group(function () {
 	Route::get('product_departments/index', 'Product_DepartmentsController@index')->name('product_departments.index');
 	Route::get('product_departments/index/{filter?}/{filtervalue?}', 'Product_DepartmentsController@index')->name('product_departments.index');	
 	Route::get('product_departments/view/{rec_id}', 'Product_DepartmentsController@view')->name('product_departments.view');	
-	Route::get('product_departments/add', 'Product_DepartmentsController@add')->name('product_departments.add');
-	Route::post('product_departments/store', 'Product_DepartmentsController@store')->name('product_departments.store');
-		
 	Route::any('product_departments/edit/{rec_id}', 'Product_DepartmentsController@edit')->name('product_departments.edit');	
 	Route::get('product_departments/delete/{rec_id}', 'Product_DepartmentsController@delete');
 
@@ -250,17 +244,11 @@ Route::middleware(['auth', 'rbac'])->group(function () {
 });
 
 	
-Route::get('componentsdata/admins_tb_firstname_value_exist',  function(Request $request){
-		$compModel = new App\Models\ComponentsData();
-		return $compModel->admins_tb_firstname_value_exist($request);
-	}
-);
-	
 Route::get('componentsdata/admins_tb_email_value_exist',  function(Request $request){
 		$compModel = new App\Models\ComponentsData();
 		return $compModel->admins_tb_email_value_exist($request);
 	}
-);
+)->middleware(['auth']);
 	
 Route::get('componentsdata/departments_tb_name_value_exist',  function(Request $request){
 		$compModel = new App\Models\ComponentsData();
@@ -334,6 +322,12 @@ Route::get('componentsdata/vendor_email_option_list',  function(Request $request
 	}
 )->middleware(['auth']);
 	
+Route::get('componentsdata/roles_name_value_exist',  function(Request $request){
+		$compModel = new App\Models\ComponentsData();
+		return $compModel->roles_name_value_exist($request);
+	}
+)->middleware(['auth']);
+	
 Route::get('componentsdata/order_no_option_list',  function(Request $request){
 		$compModel = new App\Models\ComponentsData();
 		return $compModel->order_no_option_list($request);
@@ -373,6 +367,12 @@ Route::get('componentsdata/user_id_option_list_2',  function(Request $request){
 Route::get('componentsdata/department_option_list',  function(Request $request){
 		$compModel = new App\Models\ComponentsData();
 		return $compModel->department_option_list($request);
+	}
+)->middleware(['auth']);
+	
+Route::get('componentsdata/vendors_tb_email_value_exist',  function(Request $request){
+		$compModel = new App\Models\ComponentsData();
+		return $compModel->vendors_tb_email_value_exist($request);
 	}
 )->middleware(['auth']);
 

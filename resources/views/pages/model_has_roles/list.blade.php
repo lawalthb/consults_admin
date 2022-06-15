@@ -10,7 +10,7 @@
     $total_records = $records->total();
     $limit = $records->perPage();
     $record_count = count($records);
-    $pageTitle = "Model Has Roles";
+    $pageTitle = "Admin Has Roles";
 ?>
 @extends($layout)
 @section('title', $pageTitle)
@@ -77,7 +77,6 @@
                                                 </th>
                                                 <?php } ?>
                                                 <th class="td-role_id" > Role Id</th>
-                                                <th class="td-model_type" > Model Type</th>
                                                 <th class="td-model_id" > Model Id</th>
                                                 <th class="td-btn"></th>
                                             </tr>
@@ -104,100 +103,99 @@
                                                 <?php } ?>
                                                 <!--PageComponentStart-->
                                                 <td class="td-role_id">
-                                                    <a size="sm" class="btn btn-sm btn btn-link page-modal" href="<?php print_link("roles/view/" . urlencode($data['role_id'])) ?>">
-                                                    <i class="material-icons">visibility</i> <?php echo "Roles" ?>
+                                                    <a size="sm" class="btn btn-sm btn btn-link page-modal" href="<?php print_link("roles//" . urlencode($data['role_id'])) ?>">
+                                                    <?php echo $data['roles_name'] ?>
                                                 </a>
-                                            </td>
-                                            <td class="td-model_type">
-                                                <?php echo  $data['model_type'] ; ?>
                                             </td>
                                             <td class="td-model_id">
-                                                <a href="<?php print_link("model_has_roles/view/$data[role_id]") ?>"><?php echo $data['model_id']; ?></a>
-                                            </td>
-                                            <!--PageComponentEnd-->
-                                            <td class="td-btn">
-                                                <div class="dropdown" >
-                                                    <button data-toggle="dropdown" class="dropdown-toggle btn text-primary btn-flat btn-sm">
-                                                    <i class="material-icons">menu</i> 
-                                                    </button>
-                                                    <ul class="dropdown-menu">
-                                                        <?php if($can_view){ ?>
-                                                        <a class="dropdown-item "   href="<?php print_link("model_has_roles/view/$rec_id"); ?>">
-                                                        <i class="material-icons">visibility</i> View
-                                                    </a>
-                                                    <?php } ?>
-                                                    <?php if($can_edit){ ?>
-                                                    <a class="dropdown-item "   href="<?php print_link("model_has_roles/edit/$rec_id"); ?>">
-                                                    <i class="material-icons">edit</i> Edit
+                                                <a size="sm" class="btn btn-sm btn btn-link page-modal" href="<?php print_link("admins_tb//" . urlencode($data['model_id'])) ?>">
+                                                <?php echo $data['admins_tb_firstname'] ?>
+                                            </a>
+                                        </td>
+                                        <!--PageComponentEnd-->
+                                        <td class="td-btn">
+                                            <div class="dropdown" >
+                                                <button data-toggle="dropdown" class="dropdown-toggle btn text-primary btn-flat btn-sm">
+                                                <i class="material-icons">menu</i> 
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <?php if($can_view){ ?>
+                                                    <a class="dropdown-item "   href="<?php print_link("model_has_roles/view/$rec_id"); ?>">
+                                                    <i class="material-icons">visibility</i> View
                                                 </a>
                                                 <?php } ?>
-                                                <?php if($can_delete){ ?>
-                                                <a class="dropdown-item record-delete-btn" data-prompt-msg="Are you sure you want to delete this record?" data-display-style="modal" href="<?php print_link("model_has_roles/delete/$rec_id"); ?>">
-                                                <i class="material-icons">clear</i> Delete
+                                                <?php if($can_edit){ ?>
+                                                <a class="dropdown-item "   href="<?php print_link("model_has_roles/edit/$rec_id"); ?>">
+                                                <i class="material-icons">edit</i> Edit
                                             </a>
                                             <?php } ?>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <?php 
-                                }
-                            ?>
-                            <!--endrecord-->
-                        </tbody>
-                        <tbody class="search-data"></tbody>
-                        <?php
-                            }
-                            else{
-                        ?>
-                        <tbody class="page-data">
-                            <tr>
-                                <td class="bg-light text-center text-muted animated bounce p-3" colspan="1000">
-                                    <i class="material-icons">block</i> No record found
-                                </td>
-                            </tr>
-                        </tbody>
-                        <?php
+                                            <?php if($can_delete){ ?>
+                                            <a class="dropdown-item record-delete-btn" data-prompt-msg="Are you sure you want to delete this record?" data-display-style="modal" href="<?php print_link("model_has_roles/delete/$rec_id"); ?>">
+                                            <i class="material-icons">clear</i> Delete
+                                        </a>
+                                        <?php } ?>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <?php 
                             }
                         ?>
-                    </table>
-                </div>
-                <?php
-                    if($show_footer){
-                ?>
-                <div class="">
-                    <div class="row justify-content-center">    
-                        <div class="col-md-auto justify-content-center">    
-                            <div class="p-3 d-flex justify-content-between">    
-                                <?php if($can_delete){ ?>
-                                <button data-prompt-msg="Are you sure you want to delete these records?" data-display-style="modal" data-url="<?php print_link("model_has_roles/delete/{sel_ids}"); ?>" class="btn btn-sm btn-danger btn-delete-selected d-none">
-                                <i class="material-icons">clear</i> Delete Selected
-                                </button>
-                                <?php } ?>
-                            </div>
-                        </div>
-                        <div class="col">   
-                            <?php
-                                if($show_pagination == true){
-                                $pager = new Pagination($total_records, $record_count);
-                                $pager->show_page_count = false;
-                                $pager->show_record_count = true;
-                                $pager->show_page_limit =false;
-                                $pager->limit = $limit;
-                                $pager->show_page_number_list = true;
-                                $pager->pager_link_range=5;
-                                $pager->render();
-                                }
-                            ?>
+                        <!--endrecord-->
+                    </tbody>
+                    <tbody class="search-data"></tbody>
+                    <?php
+                        }
+                        else{
+                    ?>
+                    <tbody class="page-data">
+                        <tr>
+                            <td class="bg-light text-center text-muted animated bounce p-3" colspan="1000">
+                                <i class="material-icons">block</i> No record found
+                            </td>
+                        </tr>
+                    </tbody>
+                    <?php
+                        }
+                    ?>
+                </table>
+            </div>
+            <?php
+                if($show_footer){
+            ?>
+            <div class="">
+                <div class="row justify-content-center">    
+                    <div class="col-md-auto justify-content-center">    
+                        <div class="p-3 d-flex justify-content-between">    
+                            <?php if($can_delete){ ?>
+                            <button data-prompt-msg="Are you sure you want to delete these records?" data-display-style="modal" data-url="<?php print_link("model_has_roles/delete/{sel_ids}"); ?>" class="btn btn-sm btn-danger btn-delete-selected d-none">
+                            <i class="material-icons">clear</i> Delete Selected
+                            </button>
+                            <?php } ?>
                         </div>
                     </div>
+                    <div class="col">   
+                        <?php
+                            if($show_pagination == true){
+                            $pager = new Pagination($total_records, $record_count);
+                            $pager->show_page_count = false;
+                            $pager->show_record_count = true;
+                            $pager->show_page_limit =false;
+                            $pager->limit = $limit;
+                            $pager->show_page_number_list = true;
+                            $pager->pager_link_range=5;
+                            $pager->render();
+                            }
+                        ?>
+                    </div>
                 </div>
-                <?php
-                    }
-                ?>
             </div>
+            <?php
+                }
+            ?>
         </div>
     </div>
+</div>
 </div>
 </div>
 </div>

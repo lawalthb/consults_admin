@@ -41,27 +41,17 @@
                                     <div class="form-group ">
                                         <div class="row">
                                             <div class="col-sm-4">
-                                                <label class="control-label" for="name">Name <span class="text-danger">*</span></label>
+                                                <label class="control-label" for="name">Admin Type <span class="text-danger">*</span></label>
                                             </div>
                                             <div class="col-sm-8">
                                                 <div id="ctrl-name-holder" class=" ">
-                                                    <input id="ctrl-name"  value="<?php  echo $data['name']; ?>" type="text" placeholder="Enter Name"  required="" name="name"  class="form-control " />
+                                                    <input id="ctrl-name"  value="<?php  echo $data['name']; ?>" type="text" placeholder="Enter Admin Type"  required="" name="name"  data-url="componentsdata/roles_name_value_exist/" data-loading-msg="Checking availability ..." data-available-msg="Available" data-unavailable-msg="Not available" class="form-control  ctrl-check-duplicate" />
+                                                    <div class="check-status"></div> 
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group ">
-                                        <div class="row">
-                                            <div class="col-sm-4">
-                                                <label class="control-label" for="guard_name">Guard Name <span class="text-danger">*</span></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <div id="ctrl-guard_name-holder" class=" ">
-                                                    <input id="ctrl-guard_name"  value="<?php  echo $data['guard_name']; ?>" type="text" placeholder="Enter Guard Name"  required="" name="guard_name"  class="form-control " />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <input id="ctrl-guard_name"  value="<?php  echo $data['guard_name']; ?>" type="hidden" placeholder="Enter Guard Name"  required="" name="guard_name"  class="form-control " />
                                 </div>
                                 <div class="form-ajax-status"></div>
                                 <!--[form-content-end]-->

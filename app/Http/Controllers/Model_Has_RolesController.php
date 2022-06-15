@@ -25,6 +25,8 @@ class Model_Has_RolesController extends Controller
 			$search = trim($request->search);
 			Model_Has_Roles::search($query, $search); // search table records
 		}
+		$query->join("roles", "model_has_roles.role_id", "=", "roles.id");
+		$query->join("admins_tb", "model_has_roles.model_id", "=", "admins_tb.admin_id");
 		$orderby = $request->orderby ?? "model_has_roles.model_id";
 		$ordertype = $request->ordertype ?? "desc";
 		$query->orderBy($orderby, $ordertype);

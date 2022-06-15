@@ -57,8 +57,10 @@ class Role_Has_Permissions extends Model
      */
 	public static function listFields(){
 		return [ 
-			"permission_id",
-			"role_id" 
+			"role_has_permissions.permission_id AS permission_id",
+			"permissions.name AS permissions_name",
+			"role_has_permissions.role_id AS role_id",
+			"roles.name AS roles_name" 
 		];
 	}
 	
@@ -70,8 +72,10 @@ class Role_Has_Permissions extends Model
      */
 	public static function exportListFields(){
 		return [ 
-			"permission_id",
-			"role_id" 
+			"role_has_permissions.permission_id AS permission_id",
+			"permissions.name AS permissions_name",
+			"role_has_permissions.role_id AS role_id",
+			"roles.name AS roles_name" 
 		];
 	}
 	

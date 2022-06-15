@@ -23,11 +23,13 @@ class Vendors_TbEditRequest extends FormRequest
     public function rules()
     {
 		
+		$rec_id = request()->route('rec_id');
+
         return [
             
 				"title" => "filled|string",
 				"name" => "filled|string",
-				"email" => "nullable|email",
+				"email" => "filled|email|unique:vendors_tb,email,$rec_id,vendor_id",
 				"department_id" => "filled",
 				"status" => "filled|numeric",
             

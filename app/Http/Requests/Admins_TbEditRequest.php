@@ -27,15 +27,12 @@ class Admins_TbEditRequest extends FormRequest
 
         return [
             
-				"firstname" => "filled|string|unique:admins_tb,firstname,$rec_id,admin_id",
+				"firstname" => "filled|string",
 				"lastname" => "filled|string",
 				"email" => "filled|email|unique:admins_tb,email,$rec_id,admin_id",
 				"password" => "filled|same:confirm_password",
 				"username" => "filled|string",
-				"admin_type" => "nullable",
 				"status" => "nullable|numeric",
-				"deleted" => "filled|numeric",
-				"photo" => "nullable",
             
         ];
     }

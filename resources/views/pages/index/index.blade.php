@@ -1,6 +1,6 @@
         @inject('comp_model', 'App\Models\ComponentsData')
         <?php 
-            $pageTitle = "consults_admin";
+            $pageTitle = "OGITECH CONSULTS - ADMIN";
         ?>
         @extends($layout)
         @section('title', $pageTitle)
@@ -12,7 +12,7 @@
                         <div class="col col-sm-6 col-md-4 col-lg-3 comp-grid" >
                             <div class=" card-7 mt-5 bg-light"><div class="h4 font-weight-bold text-primary text-center">
                                 <img src="{{ asset('images/logo.png') }}" width="50px" height="50px" class="img-fluid rounded-circle" /> 
-                                User Login
+                                Admin Login
                             </div>
                         </div>
                         <div  class="card-7 page-content" >
@@ -59,27 +59,23 @@
                             </div>
                             
                         </div>
-                        <div class=" card-7">                                   <div class="text-center">
-                            Don't Have an Account? <a href="{{ route('auth.register') }}" class="btn btn-success">Register
-                            <i class="material-icons">account_box</i></a>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-@endsection
-@section('pagecss')
-<style></style>
-@endsection
-@section('pagejs')
-<script>
-    /*
-    * Page Custom Javascript | Jquery codes
-    */
-    //$(document).ready(function(){
-    //  
-    //});
-</script>
-@endsection
+    @endsection
+    @section('pagecss')
+    <style></style>
+    @endsection
+    @section('pagejs')
+    <script>
+        /*
+        * Page Custom Javascript | Jquery codes
+        */
+        //$(document).ready(function(){
+        //  
+        //});
+    </script>
+    @endsection
+    

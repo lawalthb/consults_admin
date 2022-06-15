@@ -25,8 +25,8 @@ class RolesAddRequest extends FormRequest
 		
         return [
             
-				"name" => "required|string",
-				"guard_name" => "required|string",
+				"name" => "required|string|unique:roles,name",
+				"guard_name" => "required",
             
         ];
     }

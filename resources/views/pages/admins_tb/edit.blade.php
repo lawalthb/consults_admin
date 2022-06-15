@@ -1,6 +1,6 @@
 @inject('comp_model', 'App\Models\ComponentsData')
 <?php
-    $pageTitle = "Edit Admins Tb";
+    $pageTitle = "Edit Admins";
 ?>
 @extends($layout)
 @section('title', $pageTitle)
@@ -15,7 +15,7 @@
                 <div class="col-12 col-md-auto " >
                     <div class="row  q-col-gutter-sm q-px-sm" >
                         <div class="col">
-                            <div class="h5 font-weight-bold text-primary">Edit Admins Tb</div>
+                            <div class="h5 font-weight-bold text-primary">Edit Admin</div>
                         </div>
                     </div>
                 </div>
@@ -45,8 +45,7 @@
                                             </div>
                                             <div class="col-sm-8">
                                                 <div id="ctrl-firstname-holder" class=" ">
-                                                    <input id="ctrl-firstname"  value="<?php  echo $data['firstname']; ?>" type="text" placeholder="Enter Firstname"  required="" name="firstname"  data-url="componentsdata/admins_tb_firstname_value_exist/" data-loading-msg="Checking availability ..." data-available-msg="Available" data-unavailable-msg="Not available" class="form-control  ctrl-check-duplicate" />
-                                                    <div class="check-status"></div> 
+                                                    <input id="ctrl-firstname"  value="<?php  echo $data['firstname']; ?>" type="text" placeholder="Enter Firstname"  required="" name="firstname"  class="form-control " />
                                                 </div>
                                             </div>
                                         </div>
@@ -128,7 +127,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <input id="ctrl-admin_type"  value="<?php  echo $data['admin_type']; ?>" type="hidden" placeholder="Enter Admin Type"  name="admin_type"  class="form-control " />
                                     <div class="form-group ">
                                         <div class="row">
                                             <div class="col-sm-4">
@@ -138,35 +136,6 @@
                                                 <div id="ctrl-status-holder" class=" ">
                                                     <input id="ctrl-status"  value="<?php  echo $data['status']; ?>" type="number" placeholder="Enter Status" step="any"  name="status"  class="form-control " />
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group ">
-                                        <div class="row">
-                                            <div class="col-sm-4">
-                                                <label class="control-label" for="deleted">Deleted <span class="text-danger">*</span></label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <div id="ctrl-deleted-holder" class=" ">
-                                                    <input id="ctrl-deleted"  value="<?php  echo $data['deleted']; ?>" type="number" placeholder="Enter Deleted" step="any"  required="" name="deleted"  class="form-control " />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group ">
-                                        <div class="row">
-                                            <div class="col-sm-4">
-                                                <label class="control-label" for="photo">Photo </label>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <div id="ctrl-photo-holder" class=" ">
-                                                    <div class="dropzone " input="#ctrl-photo" fieldname="photo" uploadurl="{{ url('fileuploader/upload/photo') }}"    data-multiple="false" dropmsg="Choose files or drop files here"    btntext="Browse" extensions=".jpg,.png,.gif,.jpeg" filesize="3" maximum="1">
-                                                        <input name="photo" id="ctrl-photo" class="dropzone-input form-control" value="<?php  echo $data['photo']; ?>" type="text"  />
-                                                        <!--<div class="invalid-feedback animated bounceIn text-center">Please a choose file</div>-->
-                                                        <div class="dz-file-limit animated bounceIn text-center text-danger"></div>
-                                                    </div>
-                                                </div>
-                                                <?php Html :: uploaded_files_list($data['photo'], '#ctrl-photo'); ?>
                                             </div>
                                         </div>
                                     </div>

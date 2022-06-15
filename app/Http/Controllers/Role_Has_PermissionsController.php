@@ -25,6 +25,8 @@ class Role_Has_PermissionsController extends Controller
 			$search = trim($request->search);
 			Role_Has_Permissions::search($query, $search); // search table records
 		}
+		$query->join("permissions", "role_has_permissions.permission_id", "=", "permissions.id");
+		$query->join("roles", "role_has_permissions.role_id", "=", "roles.id");
 		$orderby = $request->orderby ?? "role_has_permissions.role_id";
 		$ordertype = $request->ordertype ?? "desc";
 		$query->orderBy($orderby, $ordertype);

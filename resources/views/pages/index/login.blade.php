@@ -7,11 +7,6 @@
             <div class="my-4 p-3 bg-light">
                 
                 
-                <div class="h4 font-weight-bold text-primary text-center">
-                    <img src="{{ asset('images/logo.png') }}" width="50px" height="50px" class="img-fluid rounded-circle" /> 
-                    User Login
-                </div>
-                
                 <div>
                     @if($errors->any())
                     <div class="alert alert-danger animated bounce">{{ $errors->first() }}</div>
@@ -54,11 +49,6 @@
                             </button>
                         </div>
                     </form>
-                </div>
-                
-                <div class="text-center">
-                    Don't Have an Account? <a href="{{ route('auth.register') }}" class="btn btn-success">Register
-                    <i class="material-icons">account_box</i></a>
                 </div>
                 
                 

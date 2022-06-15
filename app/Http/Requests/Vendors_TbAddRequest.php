@@ -27,9 +27,8 @@ class Vendors_TbAddRequest extends FormRequest
             
 				"title" => "required|string",
 				"name" => "required|string",
-				"email" => "nullable|email",
+				"email" => "required|email|unique:vendors_tb,email",
 				"department_id" => "required",
-				"status" => "required|numeric",
             
         ];
     }

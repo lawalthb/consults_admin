@@ -25,8 +25,6 @@ class Product_DepartmentsAddRequest extends FormRequest
 		
         return [
             
-				"row.*.product_id" => "nullable",
-				"row.*.department_id" => "required",
             
         ];
     }

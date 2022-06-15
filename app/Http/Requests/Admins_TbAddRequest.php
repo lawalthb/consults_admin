@@ -25,13 +25,11 @@ class Admins_TbAddRequest extends FormRequest
 		
         return [
             
-				"firstname" => "required|string|unique:admins_tb,firstname",
+				"firstname" => "required|string",
 				"lastname" => "required|string",
 				"email" => "required|email|unique:admins_tb,email",
 				"password" => "required|same:confirm_password",
 				"username" => "required|string",
-				"admin_type" => "nullable",
-				"status" => "nullable|numeric",
             
         ];
     }

@@ -17,21 +17,6 @@ class ComponentsData{
 	 * @param string $value
      * @return bool
      */
-	function admins_tb_firstname_value_exist(Request $request){
-		$value = trim($request->value);
-		$exist = DB::table('admins_tb')->where('firstname', $value)->value('firstname');   
-		if($exist){
-			return true;
-		}
-		return false;
-	}
-	
-
-	/**
-     * Check if value already exist in Admins_Tb table
-	 * @param string $value
-     * @return bool
-     */
 	function admins_tb_email_value_exist(Request $request){
 		$value = trim($request->value);
 		$exist = DB::table('admins_tb')->where('email', $value)->value('email');   
@@ -196,6 +181,21 @@ class ComponentsData{
 	
 
 	/**
+     * Check if value already exist in Roles table
+	 * @param string $value
+     * @return bool
+     */
+	function roles_name_value_exist(Request $request){
+		$value = trim($request->value);
+		$exist = DB::table('roles')->where('name', $value)->value('name');   
+		if($exist){
+			return true;
+		}
+		return false;
+	}
+	
+
+	/**
      * order_no_option_list Model Action
      * @return array
      */
@@ -276,5 +276,20 @@ class ComponentsData{
 		$query_params = [];
 		$arr = DB::select(DB::raw($sqltext), $query_params);
 		return $arr;
+	}
+	
+
+	/**
+     * Check if value already exist in Vendors_Tb table
+	 * @param string $value
+     * @return bool
+     */
+	function vendors_tb_email_value_exist(Request $request){
+		$value = trim($request->value);
+		$exist = DB::table('vendors_tb')->where('email', $value)->value('email');   
+		if($exist){
+			return true;
+		}
+		return false;
 	}
 }
